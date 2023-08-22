@@ -1,0 +1,278 @@
+/* variables */
+$colorPrimaire: #9356dc;
+$colorSecondaire: #99e2d0;
+$colorTertiaire: #008766;
+$colorBackground: #f6f6f6;
+$colorBackground2: #eaeaea;
+$colorFooter: #353535;
+$fontPrimaire: 'Roboco', sans-serif;
+$fontSecondaire: 'Shrikhand';
+
+/* mixins */
+@mixin darkerBg2 {
+
+    color: darken($colorBackground2, 35%);
+
+}
+
+@mixin centerCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin leftMargin {
+    margin-left: 15px;
+}
+
+@mixin smallPadding($pad) {
+    padding-left: $pad;
+    padding-right: $pad;
+}
+
+/* generals class */
+.hundredPercent {
+    width: 100%;
+}
+
+.logo {
+    width: 50%;
+}
+
+.whiteText {
+    color: white;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.itemCenter {
+    align-items: center;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.shadow {
+    filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
+}
+
+.roundAngles {
+    border-radius: 20px;
+}
+
+.iconColor1 {
+    @include darkerBg2();
+}
+
+.iconColor2 {
+    color: $colorPrimaire;
+}
+
+.iconDegrad {
+    color: linear-gradient(0deg, $colorPrimaire, #e370db);
+}
+
+/* body */
+body {
+    margin: 0%;
+    font-family: $fontPrimaire;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* header */
+header {
+    display: flex;
+    padding: 10px;
+}
+
+/* main */
+section {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.location {
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    background-color: $colorBackground2;
+
+    i {
+        margin-right: 15px;
+    }
+}
+
+.instructions {
+    background-color: $colorBackground;
+    align-items: center;
+    @include smallPadding(15px);
+
+    h1 {
+        width: 75%;
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    >p {
+        text-align: center;
+        margin-top: 0%;
+    }
+
+    a {
+        height: 50px;
+        border-radius: 25px;
+        background: linear-gradient(0deg, $colorPrimaire, #e370db);
+        width: 218px;
+        color: white;
+        font-size: 0.9em;
+        align-items: center;
+
+        p {
+            margin: 0%;
+        }
+    }
+}
+
+.fonction {
+    @include smallPadding(15px);
+
+    .fonction__box {
+        padding-left: 13px;
+    }
+
+    .fonction__btn {
+        margin-bottom: 20px;
+        background-color: $colorBackground;
+        height: 72px;
+        justify-content: flex-start;
+        align-items: center;
+
+        span {
+            background-color: $colorPrimaire;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            @include centerCenter();
+            position: relative;
+            right: 10px;
+            font-size: 0.7em
+        }
+
+        i {
+            @include leftMargin();
+        }
+
+        p {
+            @include leftMargin();
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+    }
+}
+
+/* restaurants */
+.nouveau {
+    position: relative;
+    top: 40px;
+    left: 200px;
+    background-color: $colorSecondaire;
+    border-radius: 5px;
+    color: $colorTertiaire;
+    width: 80px;
+    height: 30px;
+
+    p {
+        margin: 0%;
+        font-size: 0.8em
+    }
+}
+
+.restaurants {
+    @include smallPadding(15px);
+    background-color: $colorBackground;
+    align-items: center;
+
+    h1 {
+        align-self: flex-start;
+        margin-bottom: 0%;
+    }
+}
+
+.card {
+    width: 290px;
+
+    .card__image {
+        height: 180px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .card__content {
+        background-color: white;
+        justify-content: space-between;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        @include smallPadding(15px);
+
+        p {
+            margin-top: 0%;
+        }
+    }
+
+    .card__title {
+        font-size: 1.3em;
+        margin-bottom: 0%;
+    }
+
+    i {
+        font-size: 1.5em;
+    }
+
+}
+
+/* footer */
+footer {
+    padding-top: 25px;
+    @include smallPadding(15px);
+    background-color: $colorFooter;
+
+    .footer__logo {
+        height: 17px;
+        object-fit: contain;
+        align-self: flex-start;
+    }
+
+    i {
+        color: white;
+        margin-right: 10px;
+    }
+
+    a,
+    img {
+        margin-bottom: 16px;
+        color: white;
+    }
+}
