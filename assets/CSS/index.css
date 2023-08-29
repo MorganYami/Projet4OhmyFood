@@ -1,61 +1,7 @@
-/* variables */
-/* mixins */
-/* generals class */
-.hundredPercent {
-  width: 100%;
-}
-
-.logo {
-  width: 50%;
-}
-
-.whiteText {
-  color: white;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.flex {
-  display: flex;
-  flex-direction: column;
-}
-
-.justifyCenter {
-  justify-content: center;
-}
-
-.itemCenter {
-  align-items: center;
-}
-
-.row {
-  flex-direction: row;
-}
-
-.shadow {
-  filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
-}
-
-.roundAngles {
-  border-radius: 20px;
-}
-
-.iconColor1 {
-  color: #919191;
-}
-
-.iconColor2 {
-  color: #9356dc;
-}
-
-.iconDegrad {
-  color: linear-gradient(0deg, #9356dc, #e370db);
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /* body */
 body {
+  width: 100%;
   margin: 0%;
   font-family: "Roboco", sans-serif;
   display: flex;
@@ -68,10 +14,69 @@ a {
   text-decoration: none;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 /* header */
 header {
-  display: flex;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+header i {
+  font-size: 1.5em;
+  position: absolute;
+  left: 20px;
+}
+header .logo {
+  width: 10em;
+}
+
+/* main */
+main {
+  width: 100%;
+}
+
+/* footer */
+footer {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #353535;
+  align-items: flex-start;
+}
+footer .footer__logo {
+  height: 17px;
+  margin-bottom: 20px;
+}
+footer .footer__logo path {
+  fill: white;
+}
+footer i {
+  color: white;
+  margin-right: 10px;
+}
+footer a,
+footer img {
+  margin-bottom: 16px;
+  color: white;
+}
+
+/* generals class */
+.iconColor1 {
+  color: #919191;
+}
+
+.iconColor2 {
+  color: #9356dc;
+}
+
+.iconDegrad {
+  color: linear-gradient(0deg, #9356dc, #e370db);
 }
 
 /* main */
@@ -81,17 +86,32 @@ section {
 }
 
 .location {
+  display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   font-weight: bold;
   background-color: #eaeaea;
 }
 .location i {
   margin-right: 15px;
+  margin-left: 90px;
+}
+.location input {
+  max-width: 190px;
+  border: none;
+  background-color: #eaeaea;
+  margin: 15px 0px 15px 0px;
+  font-size: 0.95em;
+  font-weight: bold;
 }
 
 .instructions {
   background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
@@ -106,6 +126,10 @@ section {
   margin-top: 0%;
 }
 .instructions a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
   height: 50px;
   border-radius: 25px;
   background: linear-gradient(0deg, #9356dc, #e370db);
@@ -123,12 +147,18 @@ section {
   padding-right: 15px;
 }
 .fonction .fonction__box {
+  display: flex;
+  flex-direction: column;
   padding-left: 13px;
 }
 .fonction .fonction__btn {
+  border-radius: 20px;
   margin-bottom: 20px;
   background-color: #f6f6f6;
   height: 72px;
+  display: flex;
+  flex-direction: row;
+  filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
   justify-content: flex-start;
   align-items: center;
 }
@@ -156,6 +186,10 @@ section {
 
 /* restaurants */
 .nouveau {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   top: 40px;
   left: 200px;
@@ -166,6 +200,10 @@ section {
   height: 30px;
 }
 .nouveau p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0%;
   font-size: 0.8em;
 }
@@ -174,6 +212,8 @@ section {
   padding-left: 15px;
   padding-right: 15px;
   background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .restaurants h1 {
@@ -182,6 +222,9 @@ section {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 290px;
 }
 .card .card__image {
@@ -195,6 +238,9 @@ section {
   border-top-right-radius: 20px;
 }
 .card .card__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: white;
   justify-content: space-between;
   border-bottom-left-radius: 20px;
@@ -209,29 +255,9 @@ section {
   font-size: 1.3em;
   margin-bottom: 0%;
 }
-.card i {
+.card svg {
   font-size: 1.5em;
 }
-
-/* footer */
-footer {
-  padding-top: 25px;
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: #353535;
+.card .heart2 {
+  fill: url(#MyGradient);
 }
-footer .footer__logo {
-  height: 17px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  align-self: flex-start;
-}
-footer i {
-  color: white;
-  margin-right: 10px;
-}
-footer a,
-footer img {
-  margin-bottom: 16px;
-  color: white;
-}/*# sourceMappingURL=styles.css.map */

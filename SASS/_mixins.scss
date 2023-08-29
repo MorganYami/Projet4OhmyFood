@@ -1,0 +1,29 @@
+//mixins 
+@mixin centerCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin leftMargin {
+    margin-left: 15px;
+}
+
+@mixin smallPadding($pad) {
+    padding-left: $pad;
+    padding-right: $pad;
+}
+
+@mixin flexCol {    
+    display: flex;
+    flex-direction: column;
+}
+@mixin flexRow {    
+    display: flex;
+    flex-direction: row;
+}
+
+
+@mixin justCenter {
+    justify-content: center;
+}

@@ -1,0 +1,50 @@
+// components
+
+//Divers
+@mixin centerCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin leftMargin {
+    margin-left: 15px;
+}
+
+@mixin smallPadding($pad) {
+    padding-left: $pad;
+    padding-right: $pad;
+}
+
+@mixin flexCol {    
+    display: flex;
+    flex-direction: column;
+}
+@mixin flexRow {    
+    display: flex;
+    flex-direction: row;
+}
+
+
+@mixin justCenter {
+    justify-content: center;
+}
+
+@mixin itemCenter {
+    align-items: center;
+}
+
+@mixin roundAngles($angel) {
+    border-radius: $angel;
+}
+
+@mixin shadow() {
+    filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
+}
+
+//Dedied
+
+@mixin card($angles) {
+    border-radius: $angles;
+    filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
+}

@@ -1,0 +1,105 @@
+// Imports
+
+@import 'variables';
+@import 'components';
+@import 'layout';
+
+/* Main */
+
+.blank {
+    height: 170px;
+}
+
+.restaurant__image {
+    height: 210px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 60px;
+    z-index: -1;
+}
+
+section {
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: $colorBackground;
+    @include smallPadding(20px);
+    padding-bottom: 40px;
+
+    >div {
+        width: 100%;
+        @include flexRow();
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        width: 80%;
+        font-size: 1.5em;
+        font-family: $fontSecondaire;
+        font-weight: lighter;
+    }
+
+    svg {
+        font-size: 1.5em;
+    }
+
+    .commander {
+        @include flexCol();
+        @include justCenter();
+
+        >h4 {
+            @include card(35px);
+            padding: 20px 50px 20px 50px;
+            margin: 0%;
+            color: white;
+            background: linear-gradient(0deg, $colorPrimaire, #e370db);
+        }
+    }
+}
+
+.menus {
+    margin-bottom: 40px;
+
+    h2 {
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: unset;
+        margin-bottom: 5px;
+    }
+
+    .menuLine {
+        width: 40px;
+        height: 3px;
+        padding: 0%;
+        background-color: $colorSecondaire;
+    }
+
+    >div {
+        background-color: white;
+        @include card(20px);
+        padding: 10px;
+        margin-bottom: 15px;
+
+        h3 {
+            font-size: 1em;
+            margin: 0px 0px 10px 0px;
+        }
+    }
+
+    .menu__detail {
+        @include flexRow();
+        justify-content: space-between;
+
+        >p {
+            margin: 0px;
+            font-size: 0.9em;
+            font-weight: lighter;
+        }
+
+        .price {
+            font-weight: bold;
+        }
+    }
+}

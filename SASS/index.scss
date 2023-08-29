@@ -1,79 +1,14 @@
-/* variables */
-$colorPrimaire: #9356dc;
-$colorSecondaire: #99e2d0;
-$colorTertiaire: #008766;
-$colorBackground: #f6f6f6;
-$colorBackground2: #eaeaea;
-$colorFooter: #353535;
-$fontPrimaire: 'Roboco', sans-serif;
-$fontSecondaire: 'Shrikhand';
+// Imports
 
-/* mixins */
-@mixin darkerBg2 {
+@import 'variables';
+@import 'components';
+@import 'layout';
 
-    color: darken($colorBackground2, 35%);
-
-}
-
-@mixin centerCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin leftMargin {
-    margin-left: 15px;
-}
-
-@mixin smallPadding($pad) {
-    padding-left: $pad;
-    padding-right: $pad;
-}
 
 /* generals class */
-.hundredPercent {
-    width: 100%;
-}
-
-.logo {
-    width: 50%;
-}
-
-.whiteText {
-    color: white;
-}
-
-.uppercase {
-    text-transform: uppercase;
-}
-
-.flex {
-    display: flex;
-    flex-direction: column;
-}
-
-.justifyCenter {
-    justify-content: center;
-}
-
-.itemCenter {
-    align-items: center;
-}
-
-.row {
-    flex-direction: row;
-}
-
-.shadow {
-    filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
-}
-
-.roundAngles {
-    border-radius: 20px;
-}
 
 .iconColor1 {
-    @include darkerBg2();
+    color: darken($colorBackground2, 35%);
 }
 
 .iconColor2 {
@@ -84,25 +19,6 @@ $fontSecondaire: 'Shrikhand';
     color: linear-gradient(0deg, $colorPrimaire, #e370db);
 }
 
-/* body */
-body {
-    margin: 0%;
-    font-family: $fontPrimaire;
-    display: flex;
-    flex-direction: column;
-    padding-top: 8px;
-}
-
-a {
-    color: black;
-    text-decoration: none;
-}
-
-/* header */
-header {
-    display: flex;
-    padding: 10px;
-}
 
 /* main */
 section {
@@ -110,20 +26,33 @@ section {
     padding-bottom: 50px;
 }
 
-.location {
-    flex-direction: row;
-    align-items: center;
+.location {    
+    @include flexRow();
+    @include justCenter();
+    @include itemCenter();
     font-weight: bold;
     background-color: $colorBackground2;
 
     i {
         margin-right: 15px;
+        margin-left: 90px;
+    }
+    input{
+        max-width: 190px;
+        border: none;
+        background-color: $colorBackground2;
+        margin: 15px 0px 15px 0px;
+        font-size: 0.95em;
+        font-weight: bold;
     }
 }
 
 .instructions {
     background-color: $colorBackground;
-    align-items: center;
+    @include flexCol();
+    @include justCenter();
+    @include itemCenter();
+    @include itemCenter();
     @include smallPadding(15px);
 
     h1 {
@@ -138,8 +67,11 @@ section {
     }
 
     a {
+        @include flexCol();
+        @include justCenter();
+        @include shadow();
         height: 50px;
-        border-radius: 25px;
+        @include roundAngles(25px) ;
         background: linear-gradient(0deg, $colorPrimaire, #e370db);
         width: 218px;
         color: white;
@@ -156,20 +88,24 @@ section {
     @include smallPadding(15px);
 
     .fonction__box {
+        @include flexCol();
         padding-left: 13px;
     }
 
     .fonction__btn {
+        @include roundAngles(20px) ;
         margin-bottom: 20px;
         background-color: $colorBackground;
         height: 72px;
+        @include flexRow();
+        @include shadow();
         justify-content: flex-start;
         align-items: center;
 
         span {
             background-color: $colorPrimaire;
             color: white;
-            border-radius: 50%;
+            @include roundAngles(50%) ;
             width: 24px;
             height: 24px;
             @include centerCenter();
@@ -192,16 +128,22 @@ section {
 
 /* restaurants */
 .nouveau {
+    @include flexCol();
+    @include justCenter();
+    @include itemCenter();
     position: relative;
     top: 40px;
     left: 200px;
     background-color: $colorSecondaire;
-    border-radius: 5px;
+    @include roundAngles(5px) ;
     color: $colorTertiaire;
     width: 80px;
     height: 30px;
 
     p {
+        @include flexCol();
+        @include justCenter();
+        @include itemCenter();
         margin: 0%;
         font-size: 0.8em
     }
@@ -210,7 +152,8 @@ section {
 .restaurants {
     @include smallPadding(15px);
     background-color: $colorBackground;
-    align-items: center;
+    @include flexCol();
+    @include itemCenter();
 
     h1 {
         align-self: flex-start;
@@ -219,6 +162,8 @@ section {
 }
 
 .card {
+    @include flexCol();
+    @include justCenter();
     width: 290px;
 
     .card__image {
@@ -231,6 +176,8 @@ section {
     }
 
     .card__content {
+        @include flexRow();
+        @include itemCenter();
         background-color: white;
         justify-content: space-between;
         border-bottom-left-radius: 20px;
@@ -247,32 +194,11 @@ section {
         margin-bottom: 0%;
     }
 
-    i {
+    svg {
         font-size: 1.5em;
     }
-
-}
-
-/* footer */
-footer {
-    padding-top: 25px;
-    @include smallPadding(15px);
-    background-color: $colorFooter;
-
-    .footer__logo {
-        height: 17px;
-        object-fit: contain;
-        align-self: flex-start;
+    .heart2 {
+        fill: url(#MyGradient);
     }
 
-    i {
-        color: white;
-        margin-right: 10px;
-    }
-
-    a,
-    img {
-        margin-bottom: 16px;
-        color: white;
-    }
 }
