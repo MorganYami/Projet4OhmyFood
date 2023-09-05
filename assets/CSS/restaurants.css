@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-/* body */
 body {
   width: 100%;
   margin: 0%;
@@ -8,17 +7,14 @@ body {
   flex-direction: column;
   padding-top: 8px;
 }
-
-a {
+body a {
   color: black;
   text-decoration: none;
 }
-
-.uppercase {
+body .uppercase {
   text-transform: uppercase;
 }
 
-/* header */
 header {
   padding: 10px;
   display: flex;
@@ -34,12 +30,6 @@ header .logo {
   width: 10em;
 }
 
-/* main */
-main {
-  width: 100%;
-}
-
-/* footer */
 footer {
   padding-top: 25px;
   display: flex;
@@ -67,6 +57,10 @@ footer img {
 }
 
 /* Main */
+main {
+  width: 100%;
+}
+
 .blank {
   height: 170px;
 }
@@ -114,11 +108,73 @@ section .commander {
 }
 section .commander > h4 {
   border-radius: 35px;
+  border-width: 0px;
   filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
   padding: 20px 50px 20px 50px;
   margin: 0%;
   color: white;
   background: linear-gradient(0deg, #9356dc, #e370db);
+}
+
+.heart1 {
+  position: absolute;
+  top: 270px;
+  right: 20px;
+}
+
+.heart2 {
+  position: absolute;
+  top: 270px;
+  right: 20px;
+  z-index: 10;
+  fill: url(#MyGradient);
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.heart2:hover {
+  opacity: 1;
+}
+
+@keyframes slideInFromLeft1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromLeft2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInFromLeft3 {
+  0% {
+    transform: translateX(-100%);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.entrees {
+  animation: 2s ease-out 0s 1 slideInFromLeft1;
+}
+
+.plats {
+  animation: 4s ease-out 0s 1 slideInFromLeft2;
+}
+
+.desserts {
+  animation: 6s ease-out 0s 1 slideInFromLeft3;
 }
 
 .menus {
@@ -138,25 +194,72 @@ section .commander > h4 {
 }
 .menus > div {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 15px;
+  border-width: 0px;
   filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
-  padding: 10px;
+  padding: 0px;
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
-.menus > div h3 {
+.menus .menu__int {
+  width: 90%;
+  padding: 10px;
+  transition: width 700ms;
+}
+.menus .menu__int h3 {
   font-size: 1em;
   margin: 0px 0px 10px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menus .menu__int:hover {
+  width: 80%;
+}
+.menus .menu__int:hover + .check {
+  width: 10%;
+}
+.menus .menu__int:hover + .check i {
+  opacity: 1;
 }
 .menus .menu__detail {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 .menus .menu__detail > p {
+  height: 16px;
   margin: 0px;
   font-size: 0.9em;
+}
+.menus .menu__detail .flavor {
+  width: 80%;
   font-weight: lighter;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menus .menu__detail .price {
   font-weight: bold;
+  width: 27px;
+}
+.menus .check {
+  background-color: #99e2d0;
+  width: 0%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: width 700ms;
+}
+.menus .check i {
+  color: white;
+  opacity: 0;
+  transition: opacity 700ms;
 }

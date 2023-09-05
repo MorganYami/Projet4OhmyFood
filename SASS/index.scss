@@ -1,9 +1,12 @@
 // Imports
 
 @import 'variables';
-@import 'components';
-@import 'layout';
+@import 'components/components';
+@import 'mixins';
 
+@import 'body';
+@import 'header';
+@import 'footer';
 
 /* generals class */
 
@@ -21,12 +24,57 @@
 
 
 /* main */
+
+@keyframes spinner {
+    0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+  }
+  @keyframes goOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+  }
+  .spin {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: white;
+    z-index: 10;
+    animation: 2s forwards 3s 1 goOut;
+  }
+  .spinner::before {
+    animation: 1.5s linear infinite spinner;
+    animation-play-state: inherit;
+    border: solid 5px #cfd0d1;
+    border-bottom-color: $colorPrimaire;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 40px;
+    transform: translate3d(-50%, -50%, 0);
+    will-change: transform;
+  }
+
+@import 'main';
+
 section {
     padding-top: 30px;
     padding-bottom: 50px;
 }
 
-.location {    
+.location {
     @include flexRow();
     @include justCenter();
     @include itemCenter();
@@ -37,13 +85,15 @@ section {
         margin-right: 15px;
         margin-left: 90px;
     }
-    input{
+
+    input {
         max-width: 190px;
         border: none;
         background-color: $colorBackground2;
         margin: 15px 0px 15px 0px;
         font-size: 0.95em;
         font-weight: bold;
+        outline: none;
     }
 }
 
@@ -69,9 +119,9 @@ section {
     a {
         @include flexCol();
         @include justCenter();
-        @include shadow();
+        @include shadow(0.15);
         height: 50px;
-        @include roundAngles(25px) ;
+        @include roundAngles(25px);
         background: linear-gradient(0deg, $colorPrimaire, #e370db);
         width: 218px;
         color: white;
@@ -93,19 +143,28 @@ section {
     }
 
     .fonction__btn {
-        @include roundAngles(20px) ;
+        @include roundAngles(20px);
         margin-bottom: 20px;
         background-color: $colorBackground;
         height: 72px;
         @include flexRow();
-        @include shadow();
+        @include shadow(0.15);
         justify-content: flex-start;
         align-items: center;
+        
+        &:hover {
+            @include shadow(0.5);
+            background-color: lighten($color: $colorBackground, $amount: 2%);
+
+            i {
+                color: $colorPrimaire;
+            }
+        }
 
         span {
             background-color: $colorPrimaire;
             color: white;
-            @include roundAngles(50%) ;
+            @include roundAngles(50%);
             width: 24px;
             height: 24px;
             @include centerCenter();
@@ -131,11 +190,11 @@ section {
     @include flexCol();
     @include justCenter();
     @include itemCenter();
-    position: relative;
-    top: 40px;
-    left: 200px;
+    margin-top: 12px;
+    position: absolute;
+    right: 35px;
     background-color: $colorSecondaire;
-    @include roundAngles(5px) ;
+    @include roundAngles(5px);
     color: $colorTertiaire;
     width: 80px;
     height: 30px;
@@ -163,8 +222,8 @@ section {
 
 .card {
     @include flexCol();
-    @include justCenter();
-    width: 290px;
+    // @include justCenter();
+    width: 95%;
 
     .card__image {
         height: 180px;
@@ -184,6 +243,10 @@ section {
         border-bottom-right-radius: 20px;
         @include smallPadding(15px);
 
+        >a {
+            width: 185px;
+        }
+
         p {
             margin-top: 0%;
         }
@@ -197,8 +260,23 @@ section {
     svg {
         font-size: 1.5em;
     }
+
+    .heart1 {
+        position: absolute;
+        right: 40px;
+    }
+
     .heart2 {
+        position: absolute;
+        right: 40px;
+        z-index: 2;
         fill: url(#MyGradient);
+        opacity: 0;
+        transition: opacity 500ms;
+
+        &:hover {
+            opacity: 1;
+        }
     }
 
 }

@@ -1,10 +1,15 @@
 // Imports
 
 @import 'variables';
-@import 'components';
-@import 'layout';
+@import 'components/components';
+@import 'mixins';
+
+@import 'body';
+@import 'header';
+@import 'footer';
 
 /* Main */
+@import 'main';
 
 .blank {
     height: 170px;
@@ -59,6 +64,76 @@ section {
     }
 }
 
+.heart1 {
+    position: absolute;
+    top: 270px;
+    right: 20px;
+}
+
+.heart2 {
+    position: absolute;
+    top: 270px;
+    right: 20px;
+    z-index: 10;
+    fill: url(#MyGradient);
+    opacity: 0;
+    transition: opacity 500ms;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft1 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft2 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft3 {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    75% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.entrees {
+    animation: 2s ease-out 0s 1 slideInFromLeft1;
+}
+
+.plats {
+    animation: 4s ease-out 0s 1 slideInFromLeft2;
+}
+
+.desserts {
+    animation: 6s ease-out 0s 1 slideInFromLeft3;
+}
+
 .menus {
     margin-bottom: 40px;
 
@@ -78,28 +153,80 @@ section {
 
     >div {
         background-color: white;
-        @include card(20px);
-        padding: 10px;
+        @include card(15px);
+        padding: 0px;
         margin-bottom: 15px;
+        @include flexRow();
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .menu__int {
+        width: 90%;
+        padding: 10px;
+        transition: width 700ms;
 
         h3 {
             font-size: 1em;
             margin: 0px 0px 10px 0px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &:hover {
+            width: 80%;
+        }
+
+        &:hover+.check {
+            width: 10%
+        }
+
+        &:hover+.check i {
+            opacity: 1;
         }
     }
 
     .menu__detail {
         @include flexRow();
         justify-content: space-between;
+        width: 100%;
 
         >p {
+            height: 16px;
             margin: 0px;
             font-size: 0.9em;
+        }
+
+        .flavor {
+            width: 80%;
             font-weight: lighter;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
         }
 
         .price {
             font-weight: bold;
+            width: 27px;
+        }
+    }
+
+    .check {
+        background-color: $colorSecondaire;
+        width: 0%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        @include flexRow();
+        @include justCenter();
+        @include itemCenter();
+        transition: width 700ms;
+
+        i {
+            color: white;
+            opacity: 0;
+            transition: opacity 700ms;
         }
     }
 }

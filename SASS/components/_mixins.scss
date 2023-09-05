@@ -1,6 +1,4 @@
-// components
-
-//Divers
+//mixins 
 @mixin centerCenter {
     display: flex;
     justify-content: center;
@@ -39,12 +37,5 @@
 }
 
 @mixin shadow() {
-    filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
-}
-
-//Dedied
-
-@mixin card($angles) {
-    border-radius: $angles;
     filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.15));
 }

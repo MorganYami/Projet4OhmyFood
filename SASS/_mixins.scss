@@ -27,3 +27,15 @@
 @mixin justCenter {
     justify-content: center;
 }
+
+@mixin itemCenter {
+    align-items: center;
+}
+
+@mixin roundAngles($angel) {
+    border-radius: $angel;
+}
+
+@mixin shadow($opa) {
+    filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, $opa));
+}

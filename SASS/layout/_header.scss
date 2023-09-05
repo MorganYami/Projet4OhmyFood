@@ -1,0 +1,15 @@
+
+// header 
+header {
+    padding: 10px;
+    @include flexRow();
+    @include justCenter();
+    i {
+        font-size: 1.5em;
+        position: absolute;
+        left: 20px;
+    }
+    .logo {
+        width: 10em;
+    }
+}
