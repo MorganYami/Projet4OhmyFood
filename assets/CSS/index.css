@@ -56,17 +56,13 @@ footer img {
   color: white;
 }
 
+main {
+  width: 100%;
+}
+
 /* generals class */
-.iconColor1 {
+.iconColor {
   color: #919191;
-}
-
-.iconColor2 {
-  color: #9356dc;
-}
-
-.iconDegrad {
-  color: linear-gradient(0deg, #9356dc, #e370db);
 }
 
 /* main */
@@ -78,7 +74,7 @@ footer img {
     transform: translate3d(-50%, -50%, 0) rotate(360deg);
   }
 }
-@keyframes goOut {
+@keyframes sortie {
   0% {
     transform: translateX(0);
   }
@@ -94,7 +90,7 @@ footer img {
   left: 0%;
   background-color: white;
   z-index: 10;
-  animation: 2s forwards 3s 1 goOut;
+  animation: 2s forwards 3s 1 sortie;
 }
 
 .spinner::before {
@@ -111,10 +107,6 @@ footer img {
   width: 40px;
   transform: translate3d(-50%, -50%, 0);
   will-change: transform;
-}
-
-main {
-  width: 100%;
 }
 
 section {

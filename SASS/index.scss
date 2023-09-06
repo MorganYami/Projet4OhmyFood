@@ -1,25 +1,18 @@
 // Imports
 
 @import 'variables';
-@import 'components/components';
 @import 'mixins';
+@import 'components/card';
 
-@import 'body';
-@import 'header';
-@import 'footer';
+@import 'layout/body';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/main';
 
 /* generals class */
 
-.iconColor1 {
+.iconColor {
     color: darken($colorBackground2, 35%);
-}
-
-.iconColor2 {
-    color: $colorPrimaire;
-}
-
-.iconDegrad {
-    color: linear-gradient(0deg, $colorPrimaire, #e370db);
 }
 
 
@@ -33,7 +26,7 @@
       transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
   }
-  @keyframes goOut {
+  @keyframes sortie {
     0% {
         transform: translateX(0);
     }
@@ -49,7 +42,7 @@
     left: 0%;
     background-color: white;
     z-index: 10;
-    animation: 2s forwards 3s 1 goOut;
+    animation: 2s forwards 3s 1 sortie;
   }
   .spinner::before {
     animation: 1.5s linear infinite spinner;
@@ -66,8 +59,6 @@
     transform: translate3d(-50%, -50%, 0);
     will-change: transform;
   }
-
-@import 'main';
 
 section {
     padding-top: 30px;

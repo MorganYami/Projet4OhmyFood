@@ -1,15 +1,15 @@
 // Imports
 
 @import 'variables';
-@import 'components/components';
 @import 'mixins';
+@import 'components/card';
 
-@import 'body';
-@import 'header';
-@import 'footer';
+@import 'layout/body';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/main';
 
 /* Main */
-@import 'main';
 
 .blank {
     height: 170px;
