@@ -20,21 +20,25 @@
 
 @keyframes spinner {
     0% {
-      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
     }
+
     100% {
-      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        transform: translate3d(-50%, -50%, 0) rotate(360deg);
     }
-  }
-  @keyframes sortie {
+}
+
+@keyframes sortie {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-200%);
     }
-  }
-  .spin {
+}
+
+.spin {
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -43,8 +47,9 @@
     background-color: white;
     z-index: 10;
     animation: 2s forwards 3s 1 sortie;
-  }
-  .spinner::before {
+}
+
+.spinner::before {
     animation: 1.5s linear infinite spinner;
     animation-play-state: inherit;
     border: solid 5px #cfd0d1;
@@ -58,7 +63,7 @@
     width: 40px;
     transform: translate3d(-50%, -50%, 0);
     will-change: transform;
-  }
+}
 
 section {
     padding-top: 30px;
@@ -71,6 +76,10 @@ section {
     @include itemCenter();
     font-weight: bold;
     background-color: $colorBackground2;
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+    }
 
     i {
         margin-right: 15px;
@@ -95,6 +104,11 @@ section {
     @include itemCenter();
     @include itemCenter();
     @include smallPadding(15px);
+
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        padding: 0% 0% 50px 0%;
+    }
 
     h1 {
         width: 75%;
@@ -125,12 +139,33 @@ section {
     }
 }
 
+main {
+    @media screen and (min-width: 768px) {
+        width: 100%;
+        @include flexCol;
+        @include itemCenter;
+    }
+}
+
 .fonction {
     @include smallPadding(15px);
 
+    @media screen and (min-width: 1024px) {
+        width: 870px;
+        @include flexCol();
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
     .fonction__box {
         @include flexCol();
-        padding-left: 13px;
+        @include itemCenter;
+
+        @media screen and (min-width: 1024px) {
+            width: 100%;
+            @include flexRow();
+            justify-content: space-between;
+        }
     }
 
     .fonction__btn {
@@ -138,11 +173,19 @@ section {
         margin-bottom: 20px;
         background-color: $colorBackground;
         height: 72px;
+        width: 280px;
+        margin-left: 13px;
         @include flexRow();
         @include shadow(0.15);
         justify-content: flex-start;
         align-items: center;
-        
+
+        @media screen and (min-width: 1024px) {
+            max-width: 300px;
+            // padding-right: 40px;
+            margin-right: 20px;
+        }
+
         &:hover {
             @include shadow(0.5);
             background-color: lighten($color: $colorBackground, $amount: 2%);
@@ -190,6 +233,12 @@ section {
     width: 80px;
     height: 30px;
 
+    @media screen and (min-width: 768px) {
+        position: relative;
+        left: 315px;
+        top: 45px;
+    }
+
     p {
         @include flexCol();
         @include justCenter();
@@ -198,23 +247,74 @@ section {
         font-size: 0.8em
     }
 }
+.noNouveau {
+    height: 0%;
+    @media screen and (min-width: 768px) {
+        height: 30px;
+    }
+}
 
 .restaurants {
+    width: 100%;
+    background-color: $colorBackground;
+
+    @media screen and (min-width: 768px) {
+        @include flexCol();
+        @include itemCenter();
+        @include justCenter();
+    }
+
+    h1 {
+        align-self: flex-start;
+        margin: 0% 0% 10px 15px;
+
+        @media screen and (min-width: 768px) {
+            width: 410px;
+            align-self: auto;
+            margin-left: 0px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            width: 870px;
+        }
+    }
+}
+
+.restaurants__int {
     @include smallPadding(15px);
     background-color: $colorBackground;
     @include flexCol();
     @include itemCenter();
 
-    h1 {
-        align-self: flex-start;
-        margin-bottom: 0%;
+    @media screen and (min-width: 1024px) {
+        @include flexRow();
+        flex-wrap: wrap;
+        @include itemCenter();
+        @include justCenter;
+        width: 90%;
+        padding: 0%;
+    }
+
+    @media screen and (min-width: 1440px) {
+        width: 1082px;
+    }
+}
+
+.card2 {
+    @media screen and (min-width: 1024px) {
+        margin-left: 50px;
     }
 }
 
 .card {
     @include flexCol();
-    // @include justCenter();
-    width: 95%;
+    width: 100%;
+    margin-top: 25px;
+
+    @media screen and (min-width: 768px) {
+        width: 410px;
+        margin-top: 0%;
+    }
 
     .card__image {
         height: 180px;
@@ -255,6 +355,14 @@ section {
     .heart1 {
         position: absolute;
         right: 40px;
+
+        @media screen and (min-width: 768px) {
+            right: 200px;
+        }
+        @media screen and (min-width: 1024px) {
+            position: relative;
+            left: 85px;
+        }
     }
 
     .heart2 {
@@ -264,6 +372,14 @@ section {
         fill: url(#MyGradient);
         opacity: 0;
         transition: opacity 500ms;
+
+        @media screen and (min-width: 768px) {
+            right: 200px;
+        }
+        @media screen and (min-width: 1024px) {
+            position: relative;
+            right: 12px;
+        }
 
         &:hover {
             opacity: 1;

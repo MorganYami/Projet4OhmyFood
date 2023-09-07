@@ -39,6 +39,15 @@ footer {
   background-color: #353535;
   align-items: flex-start;
 }
+@media screen and (min-width: 768px) {
+  footer {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
 footer .footer__logo {
   height: 17px;
   margin-bottom: 20px;
@@ -46,14 +55,33 @@ footer .footer__logo {
 footer .footer__logo path {
   fill: white;
 }
+@media screen and (min-width: 768px) {
+  footer .footer__logo {
+    order: 10;
+    margin-left: 100px;
+    margin-right: 20px;
+  }
+}
 footer i {
   color: white;
   margin-right: 10px;
+}
+@media screen and (min-width: 768px) {
+  footer a {
+    margin-left: 20px;
+    font-size: 0.8em;
+  }
 }
 footer a,
 footer img {
   margin-bottom: 16px;
   color: white;
+}
+@media screen and (min-width: 768px) {
+  footer a,
+  footer img {
+    margin-bottom: 20px;
+  }
 }
 
 main {
@@ -61,6 +89,15 @@ main {
 }
 
 /* Main */
+@media screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .blank {
   height: 170px;
 }
@@ -85,6 +122,15 @@ section {
   padding-right: 20px;
   padding-bottom: 40px;
 }
+@media screen and (min-width: 768px) {
+  section {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 section > div {
   width: 100%;
   display: flex;
@@ -92,11 +138,25 @@ section > div {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  section > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
 section h1 {
   width: 80%;
   font-size: 1.5em;
   font-family: "Shrikhand", cursive;
   font-weight: lighter;
+}
+@media screen and (min-width: 768px) {
+  section h1 {
+    width: auto;
+    text-align: center;
+  }
 }
 section svg {
   font-size: 1.5em;
@@ -121,6 +181,12 @@ section .commander > h4 {
   top: 270px;
   right: 20px;
 }
+@media screen and (min-width: 768px) {
+  .heart1 {
+    position: static;
+    margin-left: 20px;
+  }
+}
 
 .heart2 {
   position: absolute;
@@ -130,6 +196,13 @@ section .commander > h4 {
   fill: url(#MyGradient);
   opacity: 0;
   transition: opacity 500ms;
+}
+@media screen and (min-width: 768px) {
+  .heart2 {
+    position: relative;
+    top: 0%;
+    right: 24px;
+  }
 }
 .heart2:hover {
   opacity: 1;
@@ -180,6 +253,16 @@ section .commander > h4 {
 .menus {
   margin-bottom: 40px;
 }
+@media screen and (min-width: 768px) {
+  .menus {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menus {
+    width: 575px;
+  }
+}
 .menus h2 {
   font-size: 1em;
   text-transform: uppercase;
@@ -209,6 +292,11 @@ section .commander > h4 {
   padding: 10px;
   transition: width 700ms;
 }
+@media screen and (min-width: 768px) {
+  .menus .menu__int {
+    width: 100%;
+  }
+}
 .menus .menu__int h3 {
   font-size: 1em;
   margin: 0px 0px 10px 0px;
@@ -219,8 +307,18 @@ section .commander > h4 {
 .menus .menu__int:hover {
   width: 80%;
 }
+@media screen and (min-width: 768px) {
+  .menus .menu__int:hover {
+    width: 80%;
+  }
+}
 .menus .menu__int:hover + .check {
   width: 10%;
+}
+@media screen and (min-width: 768px) {
+  .menus .menu__int:hover + .check {
+    width: 20%;
+  }
 }
 .menus .menu__int:hover + .check i {
   opacity: 1;

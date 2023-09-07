@@ -6,6 +6,12 @@ footer {
     @include smallPadding(15px);
     background-color: $colorFooter;
     align-items: flex-start;
+    @media screen and (min-width: 768px) {
+        height: 100px;
+        @include flexRow;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
 
     .footer__logo {
         height: 17px;
@@ -14,16 +20,31 @@ footer {
         path{            
         fill: white;
         }
+        @media screen and (min-width: 768px) {
+            // position: absolute;
+            // right: 20px;
+            order: 10;
+            margin-left: 100px;
+            margin-right: 20px;
+        }
     }
 
     i {
         color: white;
         margin-right: 10px;
     }
-
+    a {
+        @media screen and (min-width: 768px) {
+            margin-left: 20px;
+            font-size: 0.8em;
+        }
+    }
     a,
     img {
         margin-bottom: 16px;
         color: white;
+        @media screen and (min-width: 768px) {
+            margin-bottom: 20px;
+        }
     }
 }

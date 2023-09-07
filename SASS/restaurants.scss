@@ -10,7 +10,14 @@
 @import 'layout/main';
 
 /* Main */
-
+main {
+    @media screen and (min-width: 768px) {
+        
+    @include flexCol;
+    @include justCenter;
+    @include itemCenter;
+    }
+}
 .blank {
     height: 170px;
 }
@@ -31,12 +38,23 @@ section {
     background-color: $colorBackground;
     @include smallPadding(20px);
     padding-bottom: 40px;
+    @media screen and (min-width: 768px) {
+        width: 75%;
+        @include flexCol;
+        @include justCenter;
+        @include itemCenter;
+    }
 
     >div {
         width: 100%;
         @include flexRow();
         justify-content: space-between;
         align-items: center;
+        @media screen and (min-width: 768px){
+            @include flexRow;
+        @include justCenter;
+        @include itemCenter;
+        }
     }
 
     h1 {
@@ -44,6 +62,10 @@ section {
         font-size: 1.5em;
         font-family: $fontSecondaire;
         font-weight: lighter;
+        @media screen and (min-width: 768px){
+            width: auto; ;
+            text-align: center;
+        }
     }
 
     svg {
@@ -68,6 +90,10 @@ section {
     position: absolute;
     top: 270px;
     right: 20px;
+    @media screen and (min-width: 768px){
+        position: static;
+        margin-left: 20px;
+    }
 }
 
 .heart2 {
@@ -78,6 +104,11 @@ section {
     fill: url(#MyGradient);
     opacity: 0;
     transition: opacity 500ms;
+    @media screen and (min-width: 768px){
+        position: relative;
+        top: 0%;
+        right: 24px;
+    }
 
     &:hover {
         opacity: 1;
@@ -136,6 +167,12 @@ section {
 
 .menus {
     margin-bottom: 40px;
+    @media screen and (min-width: 768px) {
+        width: 75%;
+    }
+    @media screen and (min-width: 1024px) {
+        width: 575px;
+    }
 
     h2 {
         font-size: 1em;
@@ -165,6 +202,9 @@ section {
         width: 90%;
         padding: 10px;
         transition: width 700ms;
+        @media screen and (min-width: 768px) {
+            width: 100%;
+        }
 
         h3 {
             font-size: 1em;
@@ -176,10 +216,16 @@ section {
 
         &:hover {
             width: 80%;
+            @media screen and (min-width: 768px) {
+                width: 80%;
+            }
         }
 
         &:hover+.check {
-            width: 10%
+            width: 10%;
+            @media screen and (min-width: 768px) {
+                width: 20%;
+            }
         }
 
         &:hover+.check i {
