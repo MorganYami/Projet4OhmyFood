@@ -62,6 +62,9 @@ section {
         font-size: 1.5em;
         font-family: $fontSecondaire;
         font-weight: lighter;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         @media screen and (min-width: 768px){
             width: auto; ;
             text-align: center;
