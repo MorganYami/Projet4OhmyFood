@@ -121,6 +121,10 @@ section {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   section {
@@ -255,6 +259,12 @@ section .commander > h4 {
 
 .menus {
   margin-bottom: 40px;
+  width: 280px;
+}
+@media screen and (min-width: 375px) {
+  .menus {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 768px) {
   .menus {
@@ -291,11 +301,11 @@ section .commander > h4 {
   width: 100%;
 }
 .menus .menu__int {
-  width: 90%;
+  width: 260px;
   padding: 10px;
   transition: width 700ms;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 375px) {
   .menus .menu__int {
     width: 100%;
   }
@@ -308,12 +318,17 @@ section .commander > h4 {
   text-overflow: ellipsis;
 }
 .menus .menuCheck:hover .menu__int {
-  width: 80%;
+  width: 218px;
+}
+@media screen and (min-width: 375px) {
+  .menus .menuCheck:hover .menu__int {
+    width: 80%;
+  }
 }
 .menus .menuCheck:hover .menu__int + .check {
-  width: 10%;
+  width: 42px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 375px) {
   .menus .menuCheck:hover .menu__int + .check {
     width: 20%;
   }
