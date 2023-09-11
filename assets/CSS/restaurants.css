@@ -307,23 +307,18 @@ section .commander > h4 {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menus .menu__int:hover {
+.menus .menuCheck:hover .menu__int {
   width: 80%;
 }
-@media screen and (min-width: 768px) {
-  .menus .menu__int:hover {
-    width: 80%;
-  }
-}
-.menus .menu__int:hover + .check {
+.menus .menuCheck:hover .menu__int + .check {
   width: 10%;
 }
 @media screen and (min-width: 768px) {
-  .menus .menu__int:hover + .check {
+  .menus .menuCheck:hover .menu__int + .check {
     width: 20%;
   }
 }
-.menus .menu__int:hover + .check i {
+.menus .menuCheck:hover .menu__int + .check i {
   opacity: 1;
 }
 .menus .menu__detail {

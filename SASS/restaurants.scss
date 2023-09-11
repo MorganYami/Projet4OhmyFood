@@ -12,12 +12,13 @@
 /* Main */
 main {
     @media screen and (min-width: 768px) {
-        
-    @include flexCol;
-    @include justCenter;
-    @include itemCenter;
+
+        @include flexCol;
+        @include justCenter;
+        @include itemCenter;
     }
 }
+
 .blank {
     height: 170px;
 }
@@ -38,6 +39,7 @@ section {
     background-color: $colorBackground;
     @include smallPadding(20px);
     padding-bottom: 40px;
+
     @media screen and (min-width: 768px) {
         width: 75%;
         @include flexCol;
@@ -50,10 +52,11 @@ section {
         @include flexRow();
         justify-content: space-between;
         align-items: center;
-        @media screen and (min-width: 768px){
+
+        @media screen and (min-width: 768px) {
             @include flexRow;
-        @include justCenter;
-        @include itemCenter;
+            @include justCenter;
+            @include itemCenter;
         }
     }
 
@@ -65,8 +68,10 @@ section {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        @media screen and (min-width: 768px){
-            width: auto; ;
+
+        @media screen and (min-width: 768px) {
+            width: auto;
+            ;
             text-align: center;
         }
     }
@@ -93,7 +98,8 @@ section {
     position: absolute;
     top: 270px;
     right: 20px;
-    @media screen and (min-width: 768px){
+
+    @media screen and (min-width: 768px) {
         position: static;
         margin-left: 20px;
     }
@@ -107,7 +113,8 @@ section {
     fill: url(#MyGradient);
     opacity: 0;
     transition: opacity 500ms;
-    @media screen and (min-width: 768px){
+
+    @media screen and (min-width: 768px) {
         position: relative;
         top: 0%;
         right: 24px;
@@ -170,9 +177,11 @@ section {
 
 .menus {
     margin-bottom: 40px;
+
     @media screen and (min-width: 768px) {
         width: 75%;
     }
+
     @media screen and (min-width: 1024px) {
         width: 575px;
     }
@@ -205,6 +214,7 @@ section {
         width: 90%;
         padding: 10px;
         transition: width 700ms;
+
         @media screen and (min-width: 768px) {
             width: 100%;
         }
@@ -216,23 +226,24 @@ section {
             white-space: nowrap;
             text-overflow: ellipsis;
         }
+    }
 
+    .menuCheck {
         &:hover {
-            width: 80%;
-            @media screen and (min-width: 768px) {
+            .menu__int {
                 width: 80%;
             }
-        }
 
-        &:hover+.check {
-            width: 10%;
-            @media screen and (min-width: 768px) {
-                width: 20%;
+            .menu__int+.check {
+                width: 10%;
+
+                @media screen and (min-width: 768px) {
+                    width: 20%;
+                }
             }
-        }
-
-        &:hover+.check i {
-            opacity: 1;
+            .menu__int+.check i {
+                opacity: 1;
+            }
         }
     }
 
