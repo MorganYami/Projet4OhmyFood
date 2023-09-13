@@ -215,46 +215,49 @@ section .commander > h4 {
   opacity: 1;
 }
 
-@keyframes slideInFromLeft1 {
+@keyframes fadeIn1 {
   0% {
-    transform: translateX(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    opacity: 1;
   }
 }
-@keyframes slideInFromLeft2 {
+@keyframes fadeIn2 {
   0% {
-    transform: translateX(-100%);
+    opacity: 0;
   }
   50% {
-    transform: translateX(-100%);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    opacity: 1;
   }
 }
-@keyframes slideInFromLeft3 {
+@keyframes fadeIn3 {
   0% {
-    transform: translateX(-100%);
+    opacity: 0;
   }
   75% {
-    transform: translateX(-100%);
+    opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    opacity: 1;
   }
 }
 .entrees {
-  animation: 2s ease-out 0s 1 slideInFromLeft1;
+  animation: 3s ease-out 0s 1 fadeIn1;
 }
 
 .plats {
-  animation: 4s ease-out 0s 1 slideInFromLeft2;
+  animation: 6s ease-out 0s 1 fadeIn2;
 }
 
 .desserts {
-  animation: 6s ease-out 0s 1 slideInFromLeft3;
+  animation: 8s ease-out 0s 1 fadeIn3;
 }
 
 .menus {
