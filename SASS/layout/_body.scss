@@ -16,5 +16,12 @@ body {
         text-transform: uppercase;
     }
 
+    .btn_hover {
+        &:hover {
+            @include shadow(0.5);
+            background: $colorGradien2;
+            cursor: pointer;
+        }
+    }
 
 }

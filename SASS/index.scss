@@ -15,7 +15,6 @@
     color: darken($colorBackground2, 35%);
 }
 
-
 /* main */
 
 @keyframes spinner {
@@ -127,7 +126,7 @@ section {
         @include shadow(0.15);
         height: 50px;
         @include roundAngles(25px);
-        background: linear-gradient(0deg, $colorPrimaire, #e370db);
+        background: $colorGradien;
         width: 218px;
         color: white;
         font-size: 0.9em;
@@ -182,13 +181,12 @@ main {
 
         @media screen and (min-width: 1024px) {
             max-width: 300px;
-            // padding-right: 40px;
             margin-right: 20px;
         }
 
         &:hover {
             @include shadow(0.5);
-            background-color: lighten($color: $colorBackground, $amount: 2%);
+            // background-color: lighten($color: $colorBackground, $amount: 2%);
 
             i {
                 color: $colorPrimaire;
