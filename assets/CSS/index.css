@@ -199,7 +199,7 @@ section {
   text-align: center;
   margin-top: 0%;
 }
-.instructions a {
+.instructions .explorez {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -212,7 +212,12 @@ section {
   font-size: 0.9em;
   align-items: center;
 }
-.instructions a p {
+.instructions .explorez:hover {
+  filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.5));
+  background: linear-gradient(0deg, #9b63df, #e67dde);
+  cursor: pointer;
+}
+.instructions .explorez p {
   margin: 0%;
 }
 
